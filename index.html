@@ -2,11 +2,94 @@
 <html lang="ru">
   <head>
     <meta charset="utf-8">
-    <title>HTML Academy: Седона</title>
+    <title>Седона</title>
   </head>
   <body>
+    <header>
+      <nav>
+        <a><img src="img/" width="140" height="71" alt="Логотип города Седона"></a>
+        <ul>
+          <li><a href="">Информация</a></li>
+          <li><a href="">Фото и видео</a></li>
+          <li><a href="">Карта штата</a></li>
+          <li><a href="">Гостиницы</a></li>
+        </ul>
+      </nav>
+    </header>
+    
+    <main>
+      <h1>Поиск жилья в городе Седона</h1>
+      
+      <section>
+        <h2>Банер</h2>
+        <!-- Так как намешано много шрифтов в надписях, то лучше передавать такой текст изображением. Это приветствие, поэтому контентное изображение. 
+        А вот фото на фоне уходит в CSS казалось бы, но смущает, что фото должно привлекать внимание к видам с/вокруг города - сайт коммерческий, значит тоже стоит оставить изображение, как контентное. 
+        Но как их совместить впоследствии. Через background хорошо бы, но для контентного можно попробовать позиционирование. 
+        И вопрос - как сделать так, чтобы читалка различила английскую надпись в alt? -->
+        <img src="img/" width="459" height="353" alt="Надпись на английском: Welcome to the gorgeous Sedona. Because the Grand Canyon sucks!">
+        <img src="img/" width="1200" height="510" alt="Красивый вид сверху на уникальные красные скалы Седоны">
+      </section>
+      
+      <section>
+        <h2>Рассмотрим 5 причин, по которым седона круче, чем Гранд Каньон!</h2>
+        <p>Седона — небольшой городок в Аризоне, заслуживающий большего!</p>
+        <!-- Здесь будут 5 причин -->
+      </section>
+      
+      <section>
+        <h2>Поиск гостиницы в Седоне</h2>
+        <p>Заинтересовали?</p>
+        <p>Укажите предполагаемые даты поездки, и мы покажем вам лучшие предложения гостиниц в Cедоне</p>
+        <!-- либо так
+        <p>
+          <span>Заинтересовали?</span>
+          Укажите предполагаемые даты поездки, и мы покажем вам лучшие предложения гостиниц в Cедоне
+        </p>
+        -->
+        <button type="button">Поиск гостиницы в Седоне</button>
+      </section>
+      
+      <!-- Здесь будет карта -->
+    </main>
+    
+    <footer>
+      <p>
+        #VisitSedona
+        Тел: <a href="tel:74956660266">+7(495) 666-02-66</a>
+      </p>
+      <ul>
+        <li><a href="">Твитер</a></li>
+        <li><a href="">Фейсбук</a></li>
+        <li><a href="">Ютуб</a></li>
+      </ul>
+      <p>Website by</p>
+      <a href="https://htmlacademy.ru/intensive/htmlcss"><img src="img/" width="115" height="41" alt="Логотип HTMLAcademy"></a>
+    </footer>
+    
+    <section>
+      <h3>Форма поиска гостиницы</h3>
+      <!-- Догадываюсь, что так как упомянут в ТЗ JS, то будут выводиться даты в <output>, но как это сейчас в верстке передать не знаю. Сделала, как знаю. -->
+      <form method="post">
+        <label for="start-date-field">Дата заезда:</label>
+        <input type="text" name="start-date" id="start-date-field" value="24 апреля 2017" readonly>
+        <button type="button" aria-label="Календарь"></button> <!-- Для JS -->
 
-    <p>Репозиторий создан для обучения на профессиональном онлайн‑курсе «<a href="https://htmlacademy.ru/intensive/htmlcss">HTML и CSS, уровень 1</a>».</p>
+        <label for="end-date-field">Дата выезда:</label>
+        <input type="text" name="end-date" id="end-date-field" value="4 июля 2017" readonly>
+        <button type="button" aria-label="Календарь"></button> <!-- Для JS -->
 
+        <label for="adult-field">Взрослые:</label>
+        <button type="button">-</button> <!-- Для JS -->
+        <input type="number" name="adult" id="adult-field" value="2" min="0">
+        <button type="button">+</button> <!-- Для JS -->
+
+        <label for="children-field">Дети:</label>
+        <button type="button">-</button>
+        <input type="number" name="children" id="children-field" value="0" min="0">
+        <button type="button">+</button>
+
+        <button type="submit">Найти</button>
+      </form>
+    </section>
   </body>
 </html>
