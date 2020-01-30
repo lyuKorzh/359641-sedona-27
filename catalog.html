@@ -8,7 +8,7 @@
     <div class="page-wrapper">
       <header>
         <nav>
-          <a href="index.html"><img src="#" width="140" height="71" alt="Логотип города Седона"></a>
+          <a href="index.html"><img src="img/logo-header.png" width="140" height="71" alt="Логотип города Седона"></a>
           <ul>
             <li><a href="">Информация</a></li>
             <li><a href="">Фото и видео</a></li>
@@ -20,94 +20,80 @@
 
       <main>
         <h1>Результаты поиска отеля</h1>
+        <form method="get">
+          <!-- Фото на этой странице декоративное -->
+          <h2>Фильтр отелей</h2>
+          <fieldset>
+          <legend>Инфраструктура:</legend>
+          <label>
+            <input type="checkbox" name="pool" checked>
+            Бассейн
+          </label>
 
-        <!-- Хочется сделать сделать двумя формами фильтр и сортировку. С другой стороны сортировка тоже будет происходить на серверной стороне, чтобы не грузить клиента +  как я понимаю стрелочки - это типа пагинатора (кстати это вопрос - действительно ли с помощью стрелочек мы ходим по результатам вперед-назад?) не будет же сортировать JS каждые 3 отеля, он же их скопом отсортирует и сохранить нужно фильтрацию. Поэтому прихожу к выводу, что таки форма одна, но с двумя зонами. Мне не хвататет теориии, чтобы понять как именно сделать.-->
+          <label>
+            <input type="checkbox" name="carpark">
+            Парковка
+          </label>
 
-        <!-- Пришлось camelCase использовать для работы oninput -->
-        <form method="get" oninput="firstRangeOutput.value=firstSlider.value; secondRangeOutput.value=secondSlider.value">
-          <div>
-            <!-- Фото на этой странице декоративное -->
-            <h2>Фильтр отелей</h2>
-            <fieldset>
-            <legend>Инфраструктура:</legend>
+          <label>
+            <input type="checkbox" name="wifi">
+            Wi-Fi
+          </label>
+          </fieldset>
+
+          <fieldset>
+            <legend>Тип жилья:</legend>
             <label>
-              <input type="checkbox" name="pool" checked>
-              Бассейн
+              <input type="checkbox" name="hotel" checked>
+              Гостиница
             </label>
 
             <label>
-              <input type="checkbox" name="carpark">
-              Парковка
+              <input type="checkbox" name="motel" checked>
+              Мотель
             </label>
 
             <label>
-              <input type="checkbox" name="wifi">
-              Wi-Fi
+              <input type="checkbox" name="apartaments" checked>
+              Апартаменты
             </label>
-            </fieldset>
+          </fieldset>
 
-            <fieldset>
-              <legend>Тип жилья:</legend>
-              <label>
-                <input type="checkbox" name="hotel" checked>
-                Гостиница
-              </label>
-
-              <label>
-                <input type="checkbox" name="motel" checked>
-                Мотель
-              </label>
-
-              <label>
-                <input type="checkbox" name="apartaments" checked>
-                Апартаменты
-              </label>
-            </fieldset>
-
-            <fieldset>
-              <legend>Стоимость в сутки (Р):</legend>
-              <div>
-                <!-- Пришлось camelCase использовать для работы oninput -->
-                <output for="first-slider" name="firstRangeOutput">0</output>
-                <output for="second-slider" name="secondRangeOutput">3000</output>
-              </div>
-              <div>
-                <input type="range" name="firstSlider" id="first-slider" min="0" max="4000" value="0">
-                <input type="range" name="secondSlider" id="second-slider" min="0" max="4000" value="3000">
-              </div>
-              <!-- Поискала - выдает, что посредством JS, JQuery нужно делать 2 бегунка, пока ставлю какой есть в html -->
-            </fieldset>
-
-            <!-- Если остаемся на этой же странице, очищаем страницу и после заполняем ее новыми записями с заданными параметрами с помощью JS , то, мне кажется, кнопка-кнопка должна быть -->
-            <button type="button">Показать</button>
-          </div>
-
-          <div>
-            <h2>Сортировка отелей</h2>
-            <fieldset>
-              <p>Найдено:</p>
-              <output name="total">3</output>
-            </fieldset>
-
-            <fieldset>
-              <legend>Сортировка:</legend>
-              <a href="">По цене</a>
-              <a href="">По типу</a>
-              <a href="">По рейтингу</a>
-            </fieldset>
-
-            <button type="button" aria-label="Назад"></button>
-            <button type="button" aria-label="Вперед"></button>
-          </div>
+          <fieldset>
+            <legend>Стоимость в сутки (Р):</legend>
+              <input type="range" name="firstSlider" id="first-slider" min="0" max="4000" value="0">
+              <input type="range" name="secondSlider" id="second-slider" min="0" max="4000" value="3000">
+          </fieldset>
+          
+          <button type="button">Показать</button>
         </form>
+
+        <h2>Сортировка отелей</h2>
+        <div>
+          <b>Найдено: <span>3</span></b>
+          <output name="total">3</output>
+        </div>
+
+        <div>
+          <span>Сортировка:</span>
+          <a href="">По цене</a>
+          <a href="">По типу</a>
+          <a href="">По рейтингу</a>
+        </div>
         
+        <div>
+          <a href="" aria-label="По возростанию"></a>
+          <a href="" aria-label="По убыванию"></a>
+        </div>
+        
+
         <section>
           <h2>Список отелей</h2>
           <ul>
             <li>
               <div>
                 <a href="">
-                  <img src="#" width="135" height="90" alt="Вид на уникальные красные скалы и двор с окна отеля">
+                  <img src="img/amara.jpg" width="135" height="90" alt="Вид на уникальные красные скалы и двор с окна отеля">
                 </a>
                 <h3><a href="">Amara Resort &#38; Spa</a></h3>
                 <span>Гостиница</span>
@@ -124,7 +110,7 @@
             <li>
               <div>
                 <a href="">
-                  <img src="#" width="135" height="90" alt="Вид на отель со стороны заезда и вывеска отеля">
+                  <img src="img/desert.jpg" width="135" height="90" alt="Вид на отель со стороны заезда и вывеска отеля">
                 </a>
                 <h3><a href="">Desert Quail Inn</a></h3>
                 <span>Мотель</span>
@@ -141,7 +127,7 @@
             <li>
               <div>
                 <a href="">
-                  <img src="#" width="135" height="90" alt="На переднем плане обширный газон перед отелем, вдалике одноуровневый, ухоженный отель среди зеленых деревьев">
+                  <img src="img/villas.jpg" width="135" height="90" alt="На переднем плане обширный газон перед отелем, вдалике одноуровневый, ухоженный отель среди зеленых деревьев">
                 </a>
                 <h3><a href="">Villas at Poco Diablo</a></h3>
                 <span>Апартаменты</span>
@@ -170,7 +156,7 @@
         </ul>
         <p>
           Website by
-          <a href="https://htmlacademy.ru/intensive/htmlcss"><img src="#" width="115" height="41" alt="Логотип HTMLAcademy"></a>
+          <a href="https://htmlacademy.ru/intensive/htmlcss"><img src="img/logo-htmlacademy-normal.png" width="115" height="41" alt="Логотип HTMLAcademy"></a>
         </p>
       </footer>
     </div>
