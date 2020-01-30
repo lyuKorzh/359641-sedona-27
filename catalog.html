@@ -21,12 +21,86 @@
       <main>
         <h1>Результаты поиска отеля</h1>
 
-        <section>
-          <h2>Фильтр отелей</h2>
-          <!-- Фото на этой странице декоративное -->
-          <!-- Здесь будет форма -->
-        </section>
+        <!-- Хочется сделать сделать двумя формами фильтр и сортировку. С другой стороны сортировка тоже будет происходить на серверной стороне, чтобы не грузить клиента +  как я понимаю стрелочки - это типа пагинатора (кстати это вопрос - действительно ли с помощью стрелочек мы ходим по результатам вперед-назад?) не будет же сортировать JS каждые 3 отеля, он же их скопом отсортирует и сохранить нужно фильтрацию. Поэтому прихожу к выводу, что таки форма одна, но с двумя зонами. Мне не хвататет теориии, чтобы понять как именно сделать.-->
 
+        <!-- Пришлось camelCase использовать для работы oninput -->
+        <form method="get" oninput="firstRangeOutput.value=firstSlider.value; secondRangeOutput.value=secondSlider.value">
+          <div>
+            <!-- Фото на этой странице декоративное -->
+            <h2>Фильтр отелей</h2>
+            <fieldset>
+            <legend>Инфраструктура:</legend>
+            <label>
+              <input type="checkbox" name="pool" checked>
+              Бассейн
+            </label>
+
+            <label>
+              <input type="checkbox" name="carpark">
+              Парковка
+            </label>
+
+            <label>
+              <input type="checkbox" name="wifi">
+              Wi-Fi
+            </label>
+            </fieldset>
+
+            <fieldset>
+              <legend>Тип жилья:</legend>
+              <label>
+                <input type="checkbox" name="hotel" checked>
+                Гостиница
+              </label>
+
+              <label>
+                <input type="checkbox" name="motel" checked>
+                Мотель
+              </label>
+
+              <label>
+                <input type="checkbox" name="apartaments" checked>
+                Апартаменты
+              </label>
+            </fieldset>
+
+            <fieldset>
+              <legend>Стоимость в сутки (Р):</legend>
+              <div>
+                <!-- Пришлось camelCase использовать для работы oninput -->
+                <output for="first-slider" name="firstRangeOutput">0</output>
+                <output for="second-slider" name="secondRangeOutput">3000</output>
+              </div>
+              <div>
+                <input type="range" name="firstSlider" id="first-slider" min="0" max="4000" value="0">
+                <input type="range" name="secondSlider" id="second-slider" min="0" max="4000" value="3000">
+              </div>
+              <!-- Поискала - выдает, что посредством JS, JQuery нужно делать 2 бегунка, пока ставлю какой есть в html -->
+            </fieldset>
+
+            <!-- Если остаемся на этой же странице, очищаем страницу и после заполняем ее новыми записями с заданными параметрами с помощью JS , то, мне кажется, кнопка-кнопка должна быть -->
+            <button type="button">Показать</button>
+          </div>
+
+          <div>
+            <h2>Сортировка отелей</h2>
+            <fieldset>
+              <p>Найдено:</p>
+              <output name="total">3</output>
+            </fieldset>
+
+            <fieldset>
+              <legend>Сортировка:</legend>
+              <a href="">По цене</a>
+              <a href="">По типу</a>
+              <a href="">По рейтингу</a>
+            </fieldset>
+
+            <button type="button" aria-label="Назад"></button>
+            <button type="button" aria-label="Вперед"></button>
+          </div>
+        </form>
+        
         <section>
           <h2>Список отелей</h2>
           <ul>
@@ -90,9 +164,9 @@
           Тел: <a href="tel:74956660266">+7(495) 666-02-66</a>
         </p>
         <ul>
-          <li><a href="" area-label="Твитер"></a></li>
-          <li><a href="" area-label="Фейсбук"></a></li>
-          <li><a href="" area-label="Ютуб"></a></li>
+          <li><a href="" aria-label="Твитер"></a></li>
+          <li><a href="" aria-label="Фейсбук"></a></li>
+          <li><a href="" aria-label="Ютуб"></a></li>
         </ul>
         <p>
           Website by
