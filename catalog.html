@@ -19,76 +19,106 @@
       </header>
 
       <main>
-        <h1>Результаты поиска отеля</h1>
+        <h1 class="visually-hidden">Результаты поиска отеля</h1>
         <form method="get">
           <!-- Фото на этой странице декоративное -->
-          <h2>Фильтр отелей</h2>
+          <h2 class="visually-hidden">Фильтр отелей</h2>
           <fieldset>
-          <legend>Инфраструктура:</legend>
-          <label>
-            <input type="checkbox" name="pool" checked>
-            Бассейн
-          </label>
-
-          <label>
-            <input type="checkbox" name="carpark">
-            Парковка
-          </label>
-
-          <label>
-            <input type="checkbox" name="wifi">
-            Wi-Fi
-          </label>
+            <legend>Инфраструктура:</legend>
+            <ul>
+              <li>
+                <label>
+                  <input type="checkbox" name="pool" checked>
+                  Бассейн
+                </label>
+              </li>
+              
+              <li>
+                <label>
+                  <input type="checkbox" name="carpark">
+                  Парковка
+                </label>
+              </li>
+              
+              <li>
+                <label>
+                  <input type="checkbox" name="wifi">
+                  Wi-Fi
+                </label>
+              </li>
+            </ul>
           </fieldset>
 
           <fieldset>
             <legend>Тип жилья:</legend>
-            <label>
-              <input type="checkbox" name="hotel" checked>
-              Гостиница
-            </label>
-
-            <label>
-              <input type="checkbox" name="motel" checked>
-              Мотель
-            </label>
-
-            <label>
-              <input type="checkbox" name="apartaments" checked>
-              Апартаменты
-            </label>
+            <ul>
+              <li>
+                <label>
+                  <input type="checkbox" name="hotel" checked>
+                  Гостиница
+                </label>
+              </li>
+              
+              <li>
+                <label>
+                  <input type="checkbox" name="motel" checked>
+                  Мотель
+                </label>
+              </li>
+              
+              <li>
+                <label>
+                  <input type="checkbox" name="apartaments" checked>
+                  Апартаменты
+                </label>
+              </li>
+            </ul>
           </fieldset>
 
           <fieldset>
             <legend>Стоимость в сутки (Р):</legend>
-              <input type="range" name="firstSlider" id="first-slider" min="0" max="4000" value="0">
-              <input type="range" name="secondSlider" id="second-slider" min="0" max="4000" value="3000">
+            <!-- Вадим в лекции сказал, что тут не range, даже несмотря на то что так оно выглядит --
+            <input type="range" name="firstSlider" id="first-slider" min="0" max="4000" value="0">
+            <input type="range" name="secondSlider" id="second-slider" min="0" max="4000" value="3000">
+            -->
+            
+            <!-- Это из лекции, стилизуем до вида мекета в CSS -->
+            <div class="range-slider">
+              <input type="number" value="0" name="min">
+              <input type="number" value="3000" name="max">
+              
+              <div class="range-slider-track">
+                <div class="range-slider-pin range-slider-pin-min"></div>
+                <div class="range-slider-pin range-slider-pin-max"></div>
+              </div>
+            </div>
           </fieldset>
-          
           <button type="button">Показать</button>
         </form>
 
-        <h2>Сортировка отелей</h2>
         <div>
-          <b>Найдено: <span>3</span></b>
-          <span name="total">3</span>
-        </div>
+          <h2 class="visually-hidden">Сортировка отелей</h2>
+          <div>
+            <b>Найдено: <span>3</span></b>
+          </div>
 
-        <div>
-          <span>Сортировка:</span>
-          <a href="">По цене</a>
-          <a href="">По типу</a>
-          <a href="">По рейтингу</a>
+          <div>
+            <span>Сортировка:</span>
+            <ul>
+              <li><a href="">По цене</a></li>
+              <li><a href="">По типу</a></li>
+              <li><a href="">По рейтингу</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <a href="" aria-label="По возростанию"></a>
+            <a href="" aria-label="По убыванию"></a>
+          </div>
         </div>
-        
-        <div>
-          <a href="" aria-label="По возростанию"></a>
-          <a href="" aria-label="По убыванию"></a>
-        </div>
-        
 
         <section>
-          <h2>Список отелей</h2>
+          <h2 class="visually-hidden">Список отелей</h2>
           <ul>
             <li>
               <div>
