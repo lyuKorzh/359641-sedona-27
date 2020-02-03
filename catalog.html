@@ -27,24 +27,18 @@
             <legend>Инфраструктура:</legend>
             <ul>
               <li>
-                <label>
-                  <input type="checkbox" name="pool" checked>
-                  Бассейн
-                </label>
+                <input type="checkbox" name="pool" id="pool-field" checked>
+                <label for="pool-field">Бассейн</label>
               </li>
               
               <li>
-                <label>
-                  <input type="checkbox" name="carpark">
-                  Парковка
-                </label>
+                <input type="checkbox" name="carpark" id="carpark-field">
+                <label for="carpark-field">Парковка</label>
               </li>
               
               <li>
-                <label>
-                  <input type="checkbox" name="wifi">
-                  Wi-Fi
-                </label>
+                <input type="checkbox" name="wifi" id="wifi-field">
+                <label for="wifi-field">Wi-Fi</label>
               </li>
             </ul>
           </fieldset>
@@ -53,24 +47,18 @@
             <legend>Тип жилья:</legend>
             <ul>
               <li>
-                <label>
-                  <input type="checkbox" name="hotel" checked>
-                  Гостиница
-                </label>
+                <input type="checkbox" name="hotel" id="hotel-field" checked>
+                <label for="hotel-field">Гостиница</label>
               </li>
               
               <li>
-                <label>
-                  <input type="checkbox" name="motel" checked>
-                  Мотель
-                </label>
+                <input type="checkbox" name="motel" id="motel-field" checked>
+                <label for="motel-field">Мотель</label>
               </li>
               
               <li>
-                <label>
-                  <input type="checkbox" name="apartaments" checked>
-                  Апартаменты
-                </label>
+                <input type="checkbox" name="apartaments" id="apartaments-field" checked>
+                <label for="apartaments-field">Апартаменты</label>
               </li>
             </ul>
           </fieldset>
@@ -84,12 +72,18 @@
             
             <!-- Это из лекции, стилизуем до вида мекета в CSS -->
             <div class="range-slider">
-              <input type="number" value="0" name="min">
-              <input type="number" value="3000" name="max">
+              <label>От
+                <input type="number" value="0" name="min">
+              </label>
+              <label>До
+                <input type="number" value="3000" name="max">
+              </label>
               
               <div class="range-slider-track">
-                <div class="range-slider-pin range-slider-pin-min"></div>
-                <div class="range-slider-pin range-slider-pin-max"></div>
+                <button class="range-slider-pin range-slider-pin-min" area-label="минимальная цена"></button>
+                <!-- белой области не нужна же подпись? -->
+                <div class="range-slider-bar"></div>
+                <button class="range-slider-pin range-slider-pin-max" area-label="максимальная цена"></button>
               </div>
             </div>
           </fieldset>
@@ -97,7 +91,6 @@
         </form>
 
         <div>
-          <h2 class="visually-hidden">Сортировка отелей</h2>
           <div>
             <b>Найдено: <span>3</span></b>
           </div>
@@ -112,7 +105,7 @@
           </div>
 
           <div>
-            <a href="" aria-label="По возростанию"></a>
+            <a href="" aria-label="По возрастанию"></a>
             <a href="" aria-label="По убыванию"></a>
           </div>
         </div>
