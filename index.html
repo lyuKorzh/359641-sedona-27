@@ -90,8 +90,43 @@
           <b>Заинтересовали?</b>
           <p>Укажите предполагаемые даты поездки, и мы покажем вам лучшие предложения гостиниц в Cедоне</p>
           <button type="button">Поиск гостиницы в Седоне</button>
+          
+          <section>
+            <h2 class="visually-hidden">Форма поиска гостиницы</h2>
+            <form method="post" action="https://echo.htmlacademy.ru/">
+              <div>
+                <label for="start-date-field">Дата заезда:</label>
+                <input type="text" name="start-date" id="start-date-field" value="24 апреля 2017">
+                <button type="button" aria-label="Календарь"></button> <!-- Для JS -->
+              </div>
+
+              <div>
+                <label for="end-date-field">Дата выезда:</label>
+                <input type="text" name="end-date" id="end-date-field" value="4 июля 2017">
+                <button type="button" aria-label="Календарь"></button> <!-- Для JS -->
+              </div>
+
+              <div>
+                <label for="adult-field">Взрослые:</label>
+                <button type="button" aria-label="Уменьшить">-</button> <!-- Для JS -->
+                <input type="number" name="adult" id="adult-field" value="2" min="0">
+                <button type="button" aria-label="Увеличить">+</button> <!-- Для JS -->
+              </div>
+
+              <div>
+                <label for="children-field">Дети:</label>
+                <button type="button" aria-label="Уменьшить">-</button>
+                <input type="number" name="children" id="children-field" value="0" min="0">
+                <button type="button" aria-label="Увеличить">+</button>
+              </div>
+
+              <!-- Кнопка будет в другом месте -->
+              <button type="submit">Найти</button>
+            </form>
+          </section>
         </div>
-        <!-- Карта - неинтерактивная, декоративное изображение -->
+        <!-- Адресс какой вставлять? -->
+        <img src="img/map.png" width="1200" height="593" alt="Карта города Седона">
       </main>
 
       <footer>
@@ -109,43 +144,6 @@
           <a href="https://htmlacademy.ru/intensive/htmlcss"><img src="img/logo-htmlacademy.svg" width="115" height="41" alt="Логотип HTMLAcademy"></a>
         </p>
       </footer>
-      
-      <section>
-        <h3 class="visually-hidden">Форма поиска гостиницы</h3>
-        <!-- Догадываюсь, что так как упомянут в ТЗ JS, то будут выводиться даты в <output>, но как это сейчас в верстке передать не знаю. Сделала, как знаю. -->
-        <form method="get" action="https://echo.htmlacademy.ru/">
-          <!-- get, так как запрашиваю с сервера данные -->
-          <div>
-            <label for="start-date-field">Дата заезда:</label>
-            <!-- По семантике конечно здесь должен бы стоять <input type="date">, но как в таком случае вывести дату в поле как на макете я не знаю. Предполагаю, что нужно посредством JS выводить в поле уже форматированную дату, как на макете. -->
-            <input type="text" name="start-date" id="start-date-field" value="24 апреля 2017">
-            <button type="button" aria-label="Календарь"></button> <!-- Для JS -->
-          </div>
-          
-          <div>
-            <label for="end-date-field">Дата выезда:</label>
-            <input type="text" name="end-date" id="end-date-field" value="4 июля 2017">
-            <button type="button" aria-label="Календарь"></button> <!-- Для JS -->
-          </div>
-          
-          <div>
-            <label for="adult-field">Взрослые:</label>
-            <button type="button" aria-label="Уменьшить">-</button> <!-- Для JS -->
-            <input type="number" name="adult" id="adult-field" value="2" min="0">
-            <button type="button" aria-label="Увеличить">+</button> <!-- Для JS -->
-          </div>
-          
-          <div>
-            <label for="children-field">Дети:</label>
-            <button type="button" aria-label="Уменьшить">-</button>
-            <input type="number" name="children" id="children-field" value="0" min="0">
-            <button type="button" aria-label="Увеличить">+</button>
-          </div>
-          
-          <!-- Кнопка будет в другом месте -->
-          <button type="submit">Найти</button>
-        </form>
-        </section>
     </div>
   </body>
 </html>
