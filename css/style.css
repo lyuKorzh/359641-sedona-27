@@ -1,0 +1,290 @@
+body {
+	margin: 0;
+
+	padding: 0;
+	font-family: "PT Sans", Arial, sans-serif;
+	font-size: 14px;
+	line-height: 26px;
+	font-weight: 700;
+	color: #000000;
+	text-transform: uppercase;
+
+	background-color: #f2f2f2;
+}
+
+.visually-hidden {
+	position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+img {
+	max-width: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+.button {
+	font: inherit;
+
+	text-align: center;
+	color: #ffffff;
+	vertical-align: middle;
+	text-transform: uppercase;
+
+	border: none;
+}
+
+.page-wrapper {
+	background-color: #ffffff;
+}
+
+.main-navigation {
+	font-size: 14px;
+	line-height: 26px;
+	color: #000000;
+
+	background-color: #ffffff;
+}
+
+.site-navigation {
+	list-style: none;
+}
+
+.site-navigation a {
+	color: #000000;
+
+	text-align: center; /* Это на потом, чтобы в блоках выравнивался текст по центру */
+}
+
+.site-navigation a:hover,
+.site-navigation a:focus {
+	color: #669ec0; /* Если не указаны в стайлгайде, то выбирает верстальщик:); */
+}
+
+.site-navigation-current a{
+	color: #766357;
+}
+
+.page-title {;
+	font-size: 21px;
+	line-height: 26px;
+	text-align: center;
+	color: #000000;
+}
+
+.intro {
+	background-color:#f2f2f2;
+	background-image: url(../img/intro.jpg); /* Не поняла почему в этом проекте ставить нужно две точки "../img", а в барбере нет, с таким точно расположением папок... */
+	background-position: 0 0;
+	background-repeat: no-repeat;
+} 
+
+.benefits h2 {;
+	font-size: 14px;
+	line-height: 26px;
+	font-weight: 400;
+	text-align: center;
+	color: #000000;
+}
+
+.suggestion b {
+	font-size: 30px;
+	line-height: 36px;
+	color: #000000;
+}
+
+.suggestion-info {
+	font-size: 14px;
+	line-height: 24px;
+	text-align: center;
+	color: #333333;
+}
+
+.suggestion-button {
+	font-size: 21px;
+	line-height: 26px;
+
+	background-color: #766357;
+}
+
+.suggestion-button:hover,
+.suggestion-button:focus {
+	background-color: #604e43;
+}
+
+.suggestion-button:active {
+	color: rgba(255, 255, 255, 0.3);
+
+	background-color: #503e33;
+}
+
+.modal {
+	display: none;
+}
+
+.main-footer {
+	background-color: #ffffff;
+	background-opacity: 0.1;
+}
+
+.footer-contacts {
+	font-size: 21px;
+	line-height: 26px;
+}
+
+.footer-contacts a {
+	color: #000000;
+	text-decoration: none;
+}
+
+.footer-contacts a:hover,
+.footer-contacts a:focus {
+	color: #669ec0;
+	text-decoration: none;
+}
+
+.footer-social-list {
+	list-style: none;
+}
+
+.social-button {    /* Кажется лишним, возможно, не вижу перспективу */
+	color: #ffffff;
+}
+
+.footer-copyright {
+	font-size: 14px;
+	line-height: 26px; /* Не понимаю откуда берется на макете высота 50px */
+	font-weight: 400;
+	color: #000000;
+}
+
+.footer-copyright a {
+	vertical-align: middle;
+}
+
+.hotel-list {
+	list-style: none;
+}
+
+.hotel-title a {
+	font-size: 21;
+	line-height: 26px;
+	color: #000000;
+}
+
+.hotel-title a:hover,
+.hotel-title a:focus {
+	color: #81b3d2;
+}
+
+.hotel-title a:active {
+	color: rgba(0, 0, 0, 0.3);
+}
+
+.hotel-type {
+	font-size: 14px;
+	line-height: 21px;
+	font-weight: 400;
+	color: #333333;
+}
+
+.hotel-price {
+	font-size: 14px;
+	line-height: 21px;
+	font-weight: 400;
+	color: #333333;
+}
+
+.button-more-info {
+	font-size: 14px;
+	line-height: 21px;
+	font-weight: 400;
+	color: #ffffff;
+
+	background-color: #81b3d2;
+	border: none;
+}
+
+.button-more-info:hover,
+.button-more-info:focus {
+	background-color: #669ec0;
+}
+
+.button-more-info:active {
+	color: rgba(255, 255, 255, 0.3);
+
+	background-color: #5496bd;
+}
+
+.button-book {
+	font-size: 14px;
+	line-height: 21px;
+	font-weight: 400;
+	color: #ffffff;
+
+	background-color: #766357;
+	border: none;
+}
+
+.button-book:hover,
+.button-book:focus {
+	background-color: #604e43;
+}
+
+.button-book:active {
+	color: rgba(255, 255, 255, 0.3);
+
+	background-color: #503e33;
+}
+
+.hotel-rating-star {
+	width: 18px;
+	height: 18px;
+
+	background-image: url(../img/star.svg);
+	background-position: 0 0;
+	background-repeat: repeat;
+/* Остальные доставим через JS? посредством ::after? А сейчас что делать? В CSS ::after наставить? */
+}
+
+.one-star {
+	width: 18px;
+	height: 18px;
+}
+
+.two-stars {
+	width: 36px;
+	height: 18px;
+}
+
+.three-stars {
+	width: 54px;
+	height: 18px;
+}
+
+.four-stars {
+	width: 72px;
+	height: 18px;
+}
+
+.five-stars {
+	width: 90px;
+	height: 18px;
+}
+
+.hotel-rating p {
+	font-size: 14px;
+	line-height: 21px;
+	font-weight: 400;
+	color: #666666;
+
+	background-color: #f2f2f2;
+}

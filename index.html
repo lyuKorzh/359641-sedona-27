@@ -3,13 +3,16 @@
   <head>
     <meta charset="utf-8">
     <title>Седона</title>
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans:400,700&display=swap&subset=cyrillic" rel="stylesheet">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
     <div class="page-wrapper">
-      <header>
-        <nav>
-          <a><img src="img/logo-sedona.svg" width="140" height="71" alt="Логотип города Седона"></a>
-          <ul>
+      <header class="main-header">
+        <nav class="main-navigation">
+          <a class="main-header-logo"><img src="img/logo-sedona.svg" width="140" height="71" alt="Логотип города Седона"></a>
+          <ul class="site-navigation">
             <li><a href="">Информация</a></li>
             <li><a href="">Фото и видео</a></li>
             <li><a href="">Карта штата</a></li>
@@ -18,15 +21,18 @@
         </nav>
       </header>
 
-      <main>
-        <h1>Седона — небольшой городок в Аризоне, заслуживающий большего!</h1>
-        <div>
+      <main class="conteiner">
+        <h1 class="page-title">Седона — небольшой городок в Аризоне, заслуживающий большего!</h1>
+        <p class="intro">
           <img src="img/intro-welcome.svg" width="459" height="353" alt="Надпись на английском: Welcome to the gorgeous Sedona. Because the Grand Canyon sucks!">
-        </div>
+        </p>
 
-        <section>
+        <section class="benefits">
           <h2>Рассмотрим 5 причин, по которым Седона круче, чем Гранд Каньон!</h2>
-          <ol>
+
+<!-- Красная область началась -->
+
+          <ol class="benefits-list">
             <li>
               <div>
                 <h3>Настоящий городок</h3>
@@ -64,7 +70,7 @@
               </div>
               
               <div>
-                <img src="img/brige.jpg" width="800" height="256" alt="Достопремичательность. Каменный арочный мост между скалами">
+                <img src="img/bridge.jpg" width="800" height="256" alt="Достопремичательность. Каменный арочный мост между скалами">
               </div>
             </li>
             
@@ -85,60 +91,71 @@
           </ol>
         </section>
 
-        <div>
-          <b>Заинтересовали?</b>
-          <p>Укажите предполагаемые даты поездки, и мы покажем вам лучшие предложения гостиниц в Cедоне</p>
-          <button type="button">Поиск гостиницы в Седоне</button>
+<!-- Закончилась красная область -->
+
+        <div class="suggestion">
+          <b>Заинтересовали?</b> <!-- C помощью чего его выровнять по середине? Может b на р поменять? -->
+          <p class="suggestion-info">Укажите предполагаемые даты поездки, и мы покажем вам лучшие предложения гостиниц в Cедоне</p>
+          <button class="button suggestion-button" type="button">Поиск гостиницы в Седоне</button>
           
-          <section>
+          <section class="modal">
             <h2 class="visually-hidden">Форма поиска гостиницы</h2>
-            <form method="post" action="https://echo.htmlacademy.ru/">
-              <div>
+            <form class="modal-form" method="post" action="https://echo.htmlacademy.ru/">
+              <div class="modal-form-item">
                 <label for="start-date-field">Дата заезда:</label>
                 <input type="text" name="start-date" id="start-date-field" value="24 апреля 2017">
-                <button type="button" aria-label="Календарь"></button> <!-- Для JS -->
+                <button class="modal-input-button" type="button" aria-label="Календарь"></button> <!-- Для JS -->
+                <!--  class="modal-input-button" - на мой взгляд, подходит и для календаря и для +/-, после по центру выровнять иконки -->
               </div>
 
-              <div>
+              <div class="modal-form-item">
                 <label for="end-date-field">Дата выезда:</label>
                 <input type="text" name="end-date" id="end-date-field" value="4 июля 2017">
-                <button type="button" aria-label="Календарь"></button> <!-- Для JS -->
+                <button class="modal-input-button" type="button" aria-label="Календарь"></button> <!-- Для JS -->
               </div>
 
-              <div>
+              <div class="modal-form-item">
                 <label for="adult-field">Взрослые:</label>
-                <button type="button" aria-label="Уменьшить">-</button> <!-- Для JS -->
+                <button class="modal-input-button" type="button" aria-label="Уменьшить">-</button> <!-- Для JS -->
                 <input type="number" name="adult" id="adult-field" value="2" min="0">
-                <button type="button" aria-label="Увеличить">+</button> <!-- Для JS -->
+                <button class="modal-input-button" type="button" aria-label="Увеличить">+</button> <!-- Для JS -->
               </div>
 
-              <div>
+              <div class="modal-form-item">
                 <label for="children-field">Дети:</label>
-                <button type="button" aria-label="Уменьшить">-</button>
+                <button class="modal-input-button" type="button" aria-label="Уменьшить">-</button>
                 <input type="number" name="children" id="children-field" value="0" min="0">
-                <button type="button" aria-label="Увеличить">+</button>
+                <button class="modal-input-button" type="button" aria-label="Увеличить">+</button>
               </div>
 
               <!-- Кнопка будет в другом месте -->
-              <button type="submit">Найти</button>
+              <button class="modal-button" type="submit">Найти</button>
             </form>
           </section>
         </div>
-        <img src="img/map.png" width="1200" height="593" alt="США, Аризона, Седона">
+<!-- Карта в красной области -->
+        <img class="map" src="img/map.png" width="1200" height="593" alt="США, Аризона, Седона">
       </main>
 
-      <footer>
-        <p>
-          #VisitSedona
+      <footer class="main-footer">
+
+<!-- Для стилизации мне не хватало одной обертки p, и урезав ширину, наш Тел.: ускакал бы на предыдущую строку, поэтому дополнительно оборачиваю первую строку в p -->
+        <div class="footer-contacts">
+          <p>
+            #VisitSedona
+          </p>
           Тел: <a href="tel:74956660266">+7(495) 666-02-66</a>
-        </p>
-        <ul>
-          <li><a href="" aria-label="Твитер"></a></li>
-          <li><a href=""  aria-label="Фейсбук"></a></li>
-          <li><a href="" aria-label="Ютуб"></a></li>
+        </div>
+
+        <ul class="footer-social-list">
+          <li><a class="social-button" href="" aria-label="Твитер"></a></li>
+          <li><a class="social-button" href=""  aria-label="Фейсбук"></a></li>
+          <li><a class="social-button" href="" aria-label="Ютуб"></a></li>
         </ul>
-        <p>
-          Website by
+
+        <p class="footer-copyright">
+<!-- Может обернуть Website by, чтобы выровнять его относительно лого? -->
+          Website by 
           <a href="https://htmlacademy.ru/intensive/htmlcss"><img src="img/logo-htmlacademy.svg" width="115" height="41" alt="Логотип HTMLAcademy"></a>
         </p>
       </footer>
