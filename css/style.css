@@ -8,19 +8,20 @@ body {
 	font-weight: 700;
 	color: #000000;
 	text-transform: uppercase;
+	text-align: center;
 
 	background-color: #f2f2f2;
 }
 
 .visually-hidden {
 	position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  border: 0;
-  padding: 0;
-  clip: rect(0 0 0 0);
-  overflow: hidden;
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	border: 0;
+	padding: 0;
+	clip: rect(0 0 0 0);
+	overflow: hidden;
 }
 
 img {
@@ -37,13 +38,13 @@ a {
 	text-align: center;
 	color: #ffffff;
 	vertical-align: middle;
-	text-transform: uppercase;
 
 	border: none;
 }
 
 .page-wrapper {
 	background-color: #ffffff;
+	box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.2);
 }
 
 .main-navigation {
@@ -55,47 +56,54 @@ a {
 }
 
 .site-navigation {
+	margin: 0;
+	padding: 0;
+
 	list-style: none;
 }
 
 .site-navigation a {
-	color: #000000;
+	margin: 0;
+	padding: 0;
 
-	text-align: center; /* Это на потом, чтобы в блоках выравнивался текст по центру */
+	color: #000000;
 }
 
 .site-navigation a:hover,
 .site-navigation a:focus {
-	color: #669ec0; /* Если не указаны в стайлгайде, то выбирает верстальщик:); */
+	color: #81b3d2;
+}
+
+.site-navigation a:active {
+	color: #rgba(0, 0, 0, 0.3);
 }
 
 .site-navigation-current a{
 	color: #766357;
 }
 
-.page-title {;
+.page-title {
 	font-size: 21px;
 	line-height: 26px;
-	text-align: center;
 	color: #000000;
 }
 
 .intro {
-	background-color:#f2f2f2;
-	background-image: url(../img/intro.jpg); /* Не поняла почему в этом проекте ставить нужно две точки "../img", а в барбере нет, с таким точно расположением папок... */
-	background-position: 0 0;
+	background-color: #f2f2f2;
+	background-image: url(../img/intro.jpg);
 	background-repeat: no-repeat;
 } 
 
-.benefits h2 {;
+.benefits-title {
+	margin: 0;
+
 	font-size: 14px;
 	line-height: 26px;
 	font-weight: 400;
-	text-align: center;
 	color: #000000;
 }
 
-.suggestion b {
+.suggestion-title {
 	font-size: 30px;
 	line-height: 36px;
 	color: #000000;
@@ -104,7 +112,6 @@ a {
 .suggestion-info {
 	font-size: 14px;
 	line-height: 24px;
-	text-align: center;
 	color: #333333;
 }
 
@@ -131,32 +138,46 @@ a {
 }
 
 .main-footer {
-	background-color: #ffffff;
-	background-opacity: 0.1;
+	background-color: rgba(255, 255, 255, 0.1);
 }
 
 .footer-contacts {
 	font-size: 21px;
 	line-height: 26px;
+	text-align: left;
 }
 
 .footer-contacts a {
 	color: #000000;
-	text-decoration: none;
 }
 
 .footer-contacts a:hover,
 .footer-contacts a:focus {
-	color: #669ec0;
-	text-decoration: none;
+	color: #81b3d2;
+}
+
+.footer-contacts a:active {
+	color: rgba(0, 0, 0, 0.3);
 }
 
 .footer-social-list {
+	margin: 0;
+	padding: 0;
+
 	list-style: none;
 }
 
-.social-button {    /* Кажется лишним, возможно, не вижу перспективу */
-	color: #ffffff;
+.social-button {
+	background-color: #81b3d2;
+}
+
+.social-button:hover,
+.social-button:focus {
+	background-color: #669ec0;
+}
+
+.social-button:active {
+	background-color: #5496bd;
 }
 
 .footer-copyright {
@@ -164,6 +185,8 @@ a {
 	line-height: 26px; /* Не понимаю откуда берется на макете высота 50px */
 	font-weight: 400;
 	color: #000000;
+/* перенесла vertical-align из <а>, чтобы надпись была посредине строки по вертикали */
+	vertical-align: middle;
 }
 
 .footer-copyright a {
@@ -171,6 +194,9 @@ a {
 }
 
 .hotel-list {
+	margin: 0;
+	padding: 0;
+
 	list-style: none;
 }
 
@@ -245,24 +271,19 @@ a {
 	background-color: #503e33;
 }
 
+/*
 .hotel-rating-star {
 	width: 18px;
 	height: 18px;
 
 	background-image: url(../img/star.svg);
-	background-position: 0 0;
 	background-repeat: repeat;
-/* Остальные доставим через JS? посредством ::after? А сейчас что делать? В CSS ::after наставить? */
-}
-
-.one-star {
-	width: 18px;
-	height: 18px;
 }
 
 .two-stars {
-	width: 36px;
+	width: 42px;
 	height: 18px;
+	background-repeat: repeat-x;
 }
 
 .three-stars {
@@ -278,7 +299,47 @@ a {
 .five-stars {
 	width: 90px;
 	height: 18px;
+} */
+
+.hotel-rating-star {
+	width: 18px;
+	height: 18px;
+
+	background-image: url(../img/star.svg);
+	background-repeat: no-repeat;
 }
+
+.two-stars {
+	width: 42px;
+
+	background-image: url(../img/star.svg), url(../img/star.svg);
+	background-repeat: no-repeat, no-repeat;
+	background-position: 0 0, 24px 0;
+	}
+
+.three-stars {
+	width: 72px;
+
+	background-image: url(../img/star.svg), url(../img/star.svg), url(../img/star.svg);
+	background-repeat: no-repeat, no-repeat, no-repeat;
+	background-position: 0 0, 24px 0, 48px 0;
+	}
+
+	.four-stars {
+	width: 96px;
+
+	background-image: url(../img/star.svg), url(../img/star.svg), url(../img/star.svg), url(../img/star.svg);
+	background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
+	background-position: 0 0, 24px 0, 48px 0, 72px 0;
+	}
+
+	.five-stars {
+	width: 120px;
+
+	background-image: url(../img/star.svg), url(../img/star.svg), url(../img/star.svg), url(../img/star.svg), url(../img/star.svg);
+	background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, no-repeat;
+	background-position: 0 0, 24px 0, 48px 0, 72px 0, 96px 0;
+	}
 
 .hotel-rating p {
 	font-size: 14px;
