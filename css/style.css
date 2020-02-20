@@ -1,6 +1,5 @@
 body {
 	margin: 0;
-
 	padding: 0;
 	font-family: "PT Sans", Arial, sans-serif;
 	font-size: 14px;
@@ -103,6 +102,75 @@ a {
 	color: #000000;
 }
 
+.benefits-list {
+	margin: 0;
+	padding: 0;
+
+	list-style: none;
+}
+
+.benefits-item-special {
+	color: #ffffff;
+
+	background-color: #81b3d2;
+}
+
+.benefits-item-title,
+.benefits-sublist-title {
+	font-size: 21px;
+	line-height: 21px;
+}
+
+.benefits-item-text,
+.benefits-sublist-text { 
+	font-size: 14px;
+	line-height: 21px;
+	font-weight: 400; 
+}
+
+/* Кусочек сделала, но пока непонятно как выстраивать отступы не постоянные */
+.benefits-item-text {
+	content: "\2013 \2116 1 \2013 \A";
+	white-space: pre;
+}
+
+.benefits-sublist {
+	position: relative;
+
+	margin: 0;
+	padding: 0;
+
+	list-style: none;
+
+	background-color: #eeeeee;
+}
+
+.benefits-sublist li::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 10%;
+
+	width: 75px;
+	height: 76px;
+	
+  background-image: url("../img/icon-1.svg");
+  background-repeat: no-repeat;
+  background-color: #eeeeee;
+}
+
+.benefits-sublist li:nth-child(2)::before {
+	top: 76px;
+
+	background-image: url("../img/icon-2.svg");
+}
+
+.benefits-sublist li:nth-child(3)::before {
+	top: 152px;
+
+	background-image: url("../img/icon-3.svg");
+}
+
 .suggestion-title {
 	font-size: 30px;
 	line-height: 36px;
@@ -112,12 +180,14 @@ a {
 .suggestion-info {
 	font-size: 14px;
 	line-height: 24px;
+	font-weight: 400;
 	color: #333333;
 }
 
 .suggestion-button {
 	font-size: 21px;
 	line-height: 26px;
+	text-transform: uppercase;
 
 	background-color: #766357;
 }
@@ -191,6 +261,112 @@ a {
 
 .footer-copyright a {
 	vertical-align: middle;
+}
+
+.filters {
+	background-color: #669ec0;
+	background-image: url(../img/filter-background.jpg);
+	background-repeat: no-repeat;
+}
+
+.filters fieldset {
+	border: none;
+}
+
+.filters ul {
+	margin: 0;
+	padding: 0;
+}
+
+.filters label {
+	list-style: none;
+	line-height: 21px;
+	font-weight: 400;
+	color: #ffffff;
+}
+
+.filters-title {
+	font-size: 16px;
+	line-height: 21px;
+
+	color: #ffffff;
+}
+
+.filters-chechbox:hover,
+.filters-chechbox:focus,
+.filters-chechbox:active {
+	background-color: #ffffff;
+}
+
+.filters-chechbox:disabled {
+	background-color: #6a6a6a;
+}
+
+.filters-input {
+	color: #ffffff;
+
+	border: 2px solid #ffffff;
+	background-color: transparent;
+}
+
+.filters-submit-button {
+	text-transform: uppercase;
+	color: #ffffff;
+
+	border: 2px solid #ffffff;
+	background-color: transparent;
+}
+
+.filters-submit-button:hover,
+.filters-submit-button:focus {
+	color: #000000;
+
+	background-color: #ffffff;
+}
+
+.sorter-title {
+	font-size: 21px;
+}
+
+.sorter-subtitle {
+	font-size: 12px;
+	line-height: 18px;
+	font-weight: 400;
+}
+
+.sorter ul {
+	margin: 0;
+	padding: 0;
+
+	list-style: none;
+}
+
+.sorter-item a {
+	font-size: 12px;
+	line-height: 18px;
+	font-weight: 400;
+
+	color: rgba(0, 0, 0, 0.3);
+	border-bottom: 1px dashed #81b3d2;
+}
+
+.active-sorter-item a {
+	color: #81b3d2;
+
+	border: none;
+}
+
+.sorter-item a:hover,
+.sorter-item a:focus {
+	color: #81b3d2;
+
+	border-bottom: 1px dashed #81b3d2;
+}
+
+.sorter-item a:active {
+	color: #000000;
+
+	border: none;
 }
 
 .hotel-list {
