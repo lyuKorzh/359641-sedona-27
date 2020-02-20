@@ -28,53 +28,53 @@
           <!-- Фото на этой странице декоративное -->
           <h2 class="visually-hidden">Фильтр отелей</h2>
           <fieldset>
-            <legend>Инфраструктура:</legend>
+            <legend class="filters-title">Инфраструктура:</legend>
             <ul>
               <li>
-                <input type="checkbox" name="pool" id="pool-field" checked>
+                <input class="filters-chechbox" type="checkbox" name="pool" id="pool-field" checked>
                 <label for="pool-field">Бассейн</label>
               </li>
               
               <li>
-                <input type="checkbox" name="carpark" id="carpark-field">
+                <input class="filters-chechbox" type="checkbox" name="carpark" id="carpark-field">
                 <label for="carpark-field">Парковка</label>
               </li>
               
               <li>
-                <input type="checkbox" name="wifi" id="wifi-field">
+                <input class="filters-chechbox" type="checkbox" name="wifi" id="wifi-field">
                 <label for="wifi-field">Wi-Fi</label>
               </li>
             </ul>
           </fieldset>
 
           <fieldset>
-            <legend>Тип жилья:</legend>
+            <legend class="filters-title">Тип жилья:</legend>
             <ul>
               <li>
-                <input type="checkbox" name="hotel" id="hotel-field" checked>
+                <input class="filters-chechbox" type="checkbox" name="hotel" id="hotel-field" checked>
                 <label for="hotel-field">Гостиница</label>
               </li>
               
               <li>
-                <input type="checkbox" name="motel" id="motel-field" checked>
+                <input class="filters-chechbox" type="checkbox" name="motel" id="motel-field" checked>
                 <label for="motel-field">Мотель</label>
               </li>
               
               <li>
-                <input type="checkbox" name="apartaments" id="apartaments-field" checked>
+                <input class="filters-chechbox" type="checkbox" name="apartaments" id="apartaments-field" checked>
                 <label for="apartaments-field">Апартаменты</label>
               </li>
             </ul>
           </fieldset>
 
           <fieldset>
-            <legend>Стоимость в сутки (Р):</legend>
+            <legend class="filters-title">Стоимость в сутки (Р):</legend>
             <div class="range-slider">
               <label>От
-                <input type="number" value="0" name="min">
+                <input class="filters-input" type="number" value="0" name="min">
               </label>
               <label>До
-                <input type="number" value="3000" name="max">
+                <input class="filters-input" type="number" value="3000" name="max">
               </label>
               
               <div class="range-slider-track">
@@ -84,20 +84,20 @@
               </div>
             </div>
           </fieldset>
-          <button type="button">Показать</button>
+          <button class="filters-submit-button" type="button">Показать</button>
         </form>
 
-        <div>
+        <div class="sorter">
           <div>
-            <b>Найдено: <span>3</span></b>
+            <b class="sorter-title">Найдено: <span>3</span></b>
           </div>
 
           <div>
-            <span>Сортировка:</span>
+            <span class="sorter-subtitle">Сортировка:</span>
             <ul>
-              <li><a href="">По цене</a></li>
-              <li><a href="">По типу</a></li>
-              <li><a href="">По рейтингу</a></li>
+              <li class="sorter-item active-sorter-item"><a href="">По цене</a></li>
+              <li class="sorter-item"><a href="">По типу</a></li>
+              <li class="sorter-item"><a href="">По рейтингу</a></li>
             </ul>
           </div>
 
@@ -198,7 +198,7 @@
         </ul>
         <p class="footer-copyright">
           Website by
-          <a href="https://htmlacademy.ru/intensive/htmlcss"><img src="img/logo-htmlacademy.svg" width="115" height="41" alt="Логотип HTMLAcademy"></a>
+          <a class="footer-copyright-img" href="https://htmlacademy.ru/intensive/htmlcss"><img src="img/logo-htmlacademy.svg" width="115" height="41" alt="Логотип HTMLAcademy"></a>
         </p>
       </footer>
     </div>
