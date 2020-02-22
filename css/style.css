@@ -107,6 +107,13 @@ a {
 	padding: 0;
 
 	list-style: none;
+
+	counter-reset: list 0; 
+}
+
+.benefits-item:before {
+	counter-increment: list;
+	content: "\2013 " counter(list) "\2013";
 }
 
 .benefits-item-special {
@@ -130,8 +137,8 @@ a {
 
 /* Кусочек сделала, но пока непонятно как выстраивать отступы не постоянные */
 .benefits-item-text {
-	content: "\2013 \2116 1 \2013 \A";
-	white-space: pre;
+	content: "\&ndash \2116 1 \&ndash \A";
+
 }
 
 .benefits-sublist {
@@ -142,32 +149,32 @@ a {
 
 	list-style: none;
 
-	background-color: #eeeeee;
+	background-color: #ffffff;
 }
 
 .benefits-sublist li::before {
 	content: "";
 	position: absolute;
 	top: 0;
-	left: 10%;
+	left: 50%;
+	transform: translateX(-50%);
 
 	width: 75px;
 	height: 76px;
-	
-  background-image: url("../img/icon-1.svg");
-  background-repeat: no-repeat;
-  background-color: #eeeeee;
+
+	background-repeat: no-repeat;
+	background-color: #ffffff;
 }
 
-.benefits-sublist li:nth-child(2)::before {
-	top: 76px;
+.benefits-sublist .benefits-sublist-home::before {
+	background-image: url("../img/icon-1.svg");
+}
 
+.benefits-sublist .benefits-sublist-food::before {
 	background-image: url("../img/icon-2.svg");
 }
 
-.benefits-sublist li:nth-child(3)::before {
-	top: 152px;
-
+.benefits-sublist .benefits-sublist-souvenirs::before {
 	background-image: url("../img/icon-3.svg");
 }
 
@@ -267,19 +274,22 @@ a {
 	background-color: #669ec0;
 	background-image: url(../img/filter-background.jpg);
 	background-repeat: no-repeat;
+	background-size: cover;
 }
 
-.filters fieldset {
+.filters-group,
+.filters-cost {
 	border: none;
 }
 
-.filters ul {
+.filters-list {
 	margin: 0;
 	padding: 0;
+
+	list-style: none;
 }
 
 .filters label {
-	list-style: none;
 	line-height: 21px;
 	font-weight: 400;
 	color: #ffffff;
@@ -292,21 +302,12 @@ a {
 	color: #ffffff;
 }
 
-.filters-chechbox:hover,
-.filters-chechbox:focus,
-.filters-chechbox:active {
-	background-color: #ffffff;
+.filters-chechbox:focus + label {
+	outline: auto;
 }
 
 .filters-chechbox:disabled {
 	background-color: #6a6a6a;
-}
-
-.filters-input {
-	color: #ffffff;
-
-	border: 2px solid #ffffff;
-	background-color: transparent;
 }
 
 .filters-submit-button {
@@ -478,43 +479,23 @@ a {
 } */
 
 .hotel-rating-star {
-	width: 18px;
+	width: 114px;
 	height: 18px;
 
 	background-image: url(../img/star.svg);
-	background-repeat: no-repeat;
+	background-repeat: space;
 }
 
 .two-stars {
 	width: 42px;
-
-	background-image: url(../img/star.svg), url(../img/star.svg);
-	background-repeat: no-repeat, no-repeat;
-	background-position: 0 0, 24px 0;
 	}
 
 .three-stars {
-	width: 72px;
-
-	background-image: url(../img/star.svg), url(../img/star.svg), url(../img/star.svg);
-	background-repeat: no-repeat, no-repeat, no-repeat;
-	background-position: 0 0, 24px 0, 48px 0;
+	width: 66px;
 	}
 
 	.four-stars {
-	width: 96px;
-
-	background-image: url(../img/star.svg), url(../img/star.svg), url(../img/star.svg), url(../img/star.svg);
-	background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
-	background-position: 0 0, 24px 0, 48px 0, 72px 0;
-	}
-
-	.five-stars {
-	width: 120px;
-
-	background-image: url(../img/star.svg), url(../img/star.svg), url(../img/star.svg), url(../img/star.svg), url(../img/star.svg);
-	background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, no-repeat;
-	background-position: 0 0, 24px 0, 48px 0, 72px 0, 96px 0;
+	width: 89px;
 	}
 
 .hotel-rating p {
