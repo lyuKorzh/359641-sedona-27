@@ -15,6 +15,7 @@
           <ul class="site-navigation">
             <li><a href="">Информация</a></li>
             <li><a href="">Фото и видео</a></li>
+            <li class="main-header-logo-li"></li>
             <li><a href="">Карта штата</a></li>
             <li><a href="catalog.html">Гостиницы</a></li>
           </ul>
@@ -34,16 +35,18 @@
 <!-- Красная область началась -->
 
           <ol class="benefits-list">
-            <li class="benefits-item">
-              <div class="benefits-item-special">
-                <h2 class="benefits-item-title">Настоящий городок</h2>
-                <p class="benefits-item-text">Седона — не аттракцион для туристов, там течёт своя жизнь</p>
-              </div>
-              <div class="benefits-item-img">
-                <img src="img/house.jpg" width="800" height="256" alt="Выделен задний план, на котором красные скалы Седоны. Передний план слегка замылен, но видно деревянный дом с верандой, типичный для этой местности. Развевается американский флаг. Рядом пышные зеленые цветущие кусты.">
+            <li class="benefits-item benefits-flex-line benefits-flex-first-line">
+              <div class="benefits-item-special-wrapper">
+                <div class="benefits-item-special">
+                  <h2 class="benefits-item-title">Настоящий городок</h2>
+                  <p class="benefits-item-text">Седона — не аттракцион для туристов, там течёт своя жизнь</p>
+                </div>
+                <div class="benefits-item-img">
+                  <img src="img/house.jpg" width="800" height="256" alt="Выделен задний план, на котором красные скалы Седоны. Передний план слегка замылен, но видно деревянный дом с верандой, типичный для этой местности. Развевается американский флаг. Рядом пышные зеленые цветущие кусты.">
+                </div>
               </div>
               
-              <ul class="benefits-sublist">
+              <ul class="benefits-sublist benefits-flex-line benefits-flex-second-line">
                 <li class="benefits-sublist-item benefits-sublist-home">
                   <h3 class="benefits-sublist-title">Жильё</h3>
                   <!-- Иконка - декоративное изображение -->
@@ -64,38 +67,42 @@
               </ul>
             </li>
             
-            <li class="benefits-item">
-              <div class="benefits-item-special">
-                <h2 class="benefits-item-title">Там есть Мост дьявола</h2>
-                <p class="benefits-item-text">Да, по нему можно пройти! Если конечно вы осмелитесь</p>
+            <li class="benefits-item benefits-flex-line benefits-flex-third-line">
+              <div class="benefits-item-special-wrapper">
+                <div class="benefits-item-special benefits-item-special-bridge">
+                  <h2 class="benefits-item-title">Там есть<br>Мост дьявола</h2>
+                  <p class="benefits-item-text">Да, по нему можно пройти! Если конечно вы осмелитесь</p>
+                </div>
+                
+                <div class="benefits-item-img">
+                  <img src="img/bridge.jpg" width="800" height="256" alt="Достопремичательность. Каменный арочный мост между скалами">
+                </div>
               </div>
+            </li>
+            
+            <div class="benefits-flex-line benefits-flex-fourth-line">
+              <li class="benefits-item">
+                <h2 class="benefits-item-title">Небольшая площадь</h2>
+                <p class="benefits-item-text">Все достопримечательности находятся очень близко</p>
+              </li>
               
-              <div class="benefits-item-img">
-                <img src="img/bridge.jpg" width="800" height="256" alt="Достопремичательность. Каменный арочный мост между скалами">
-              </div>
-            </li>
-            
-            <li class="benefits-item">
-              <h2 class="benefits-item-title">Небольшая площадь</h2>
-              <p class="benefits-item-text">Все достопримечательности находятся очень близко</p>
-            </li>
-            
-            <li class="benefits-item">
-              <h2 class="benefits-item-title">Красивая дорога</h2>
-              <p class="benefits-item-text">Ехать в Седону из Лас-Вегаса совсем не скучно!</p>
-            </li>
-            
-            <li class="benefits-item">
-              <h2 class="benefits-item-title">Мало туристов</h2>
-              <p class="benefits-item-text">Большинство едет в гранд каньон и толпится там</p>
-            </li>
+              <li class="benefits-item">
+                <h2 class="benefits-item-title">Красивая дорога</h2>
+                <p class="benefits-item-text benefits-item-text-wide">Ехать в Седону из Лас-Вегаса совсем не скучно!</p>
+              </li>
+              
+              <li class="benefits-item">
+                <h2 class="benefits-item-title">Мало туристов</h2>
+                <p class="benefits-item-text">Большинство едет в гранд каньон и толпится там</p>
+              </li>
+            </div>
           </ol>
         </section>
 
 <!-- Закончилась красная область -->
 
         <div class="suggestion">
-          <b class="suggestion-title">Заинтересовали?</b> <!-- C помощью чего его выровнять по середине? Может b на р поменять? -->
+          <b class="suggestion-title">Заинтересовались?</b>
           <!-- Вставила дополнительный br, просто шириной нам не получится так перенести слова в этом месте -->
           <p class="suggestion-info">Укажите предполагаемые даты поездки,<br>и мы покажем вам лучшие предложения гостиниц в Cедоне</p>
           <button class="button suggestion-button" type="button">Поиск гостиницы в Седоне</button>
@@ -136,29 +143,32 @@
           </section>
         </div>
 
-        <img class="map" src="img/map.png" width="1200" height="593" alt="США, Аризона, Седона">
+        <div class="suggestion-map-wrapper">
+          <img class="map" src="img/map.png" width="1200" height="593" alt="США, Аризона, Седона">
+        </div>
       </main>
 
       <footer class="main-footer">
-
+        <div class="main-footer-wrapper">
 <!-- Для стилизации мне не хватало одной обертки p, и урезав ширину, наш Тел.: ускакал бы на предыдущую строку, поэтому дополнительно оборачиваю первую строку в p -->
-        <div class="footer-contacts">
-          <p>
-            #VisitSedona
+          <div class="footer-contacts">
+            <p class="footer-contacts-hashtag">
+              #VisitSedona
+            </p>
+            Тел: <a href="tel:74956660266">+7(495) 666-02-66</a>
+          </div>
+
+          <ul class="footer-social-list">
+            <li><a class="social-button" href="" aria-label="Твитер"></a></li>
+            <li><a class="social-button" href=""  aria-label="Фейсбук"></a></li>
+            <li><a class="social-button" href="" aria-label="Ютуб"></a></li>
+          </ul>
+
+          <p class="footer-copyright">
+            <span class="footer-copyright-text">Website by</span>
+            <a class="footer-copyright-img" href="https://htmlacademy.ru/intensive/htmlcss"><img src="img/logo-htmlacademy.svg" width="115" height="41" alt="Логотип HTMLAcademy"></a>
           </p>
-          Тел: <a href="tel:74956660266">+7(495) 666-02-66</a>
         </div>
-
-        <ul class="footer-social-list">
-          <li><a class="social-button" href="" aria-label="Твитер"></a></li>
-          <li><a class="social-button" href=""  aria-label="Фейсбук"></a></li>
-          <li><a class="social-button" href="" aria-label="Ютуб"></a></li>
-        </ul>
-
-        <p class="footer-copyright">
-          Website by 
-          <a class="footer-copyright-img" href="https://htmlacademy.ru/intensive/htmlcss"><img src="img/logo-htmlacademy.svg" width="115" height="41" alt="Логотип HTMLAcademy"></a>
-        </p>
       </footer>
     </div>
   </body>
