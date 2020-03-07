@@ -27,7 +27,7 @@
         <form class="filters" method="get" action="https://echo.htmlacademy.ru/">
           <!-- Фото на этой странице декоративное -->
           <h2 class="visually-hidden">Фильтр отелей</h2>
-          <fieldset class="filters-group">
+          <fieldset class="filters-group filters-first-group">
             <legend class="filters-title">Инфраструктура:</legend>
             <ul class="filters-list">
               <li>
@@ -67,24 +67,26 @@
             </ul>
           </fieldset>
 
-          <fieldset class="filters-cost">
-            <legend class="filters-title">Стоимость в сутки (Р):</legend>
-            <div class="range-slider">
-              <label>От
-                <input class="visually-hidden filters-input" type="number" value="0" name="min">
-              </label>
-              <label>До
-                <input class="visually-hidden filters-input" type="number" value="3000" name="max">
-              </label>
-              
-              <div class="range-slider-track">
-                <button class="visually-hidden range-slider-pin range-slider-pin-min" area-label="минимальная цена"></button>
-                <div class="range-slider-bar"></div>
-                <button class="visually-hidden range-slider-pin range-slider-pin-max" area-label="максимальная цена"></button>
+          <div class="filters-group filters-cost-group">
+            <fieldset class="filters-cost">
+              <legend class="filters-title">Стоимость в сутки (Р):</legend>
+              <div class="range-slider">
+                <label>От
+                  <input class="visually-hidden filters-input" type="number" value="0" name="min">
+                </label>
+                <label>До
+                  <input class="visually-hidden filters-input" type="number" value="3000" name="max">
+                </label>
+                
+                <div class="range-slider-track">
+                  <button class="visually-hidden range-slider-pin range-slider-pin-min" area-label="минимальная цена"></button>
+                  <div class="range-slider-bar"></div>
+                  <button class="visually-hidden range-slider-pin range-slider-pin-max" area-label="максимальная цена"></button>
+                </div>
               </div>
-            </div>
-          </fieldset>
-          <button class="filters-submit-button" type="button">Показать</button>
+            </fieldset>
+            <button class="filters-submit-button" type="button">Показать</button>
+          </div>
         </form>
 
         <div class="sorter">
@@ -92,9 +94,9 @@
             <b class="sorter-title">Найдено: <span>3</span></b>
           </div>
 
-          <div>
+          <div class="sorter-items-wrapper">
             <span class="sorter-subtitle">Сортировка:</span>
-            <ul>
+            <ul class="sorter-items">
               <li class="sorter-item active-sorter-item"><a href="">По цене</a></li>
               <li class="sorter-item"><a href="">По типу</a></li>
               <li class="sorter-item"><a href="">По рейтингу</a></li>
@@ -113,23 +115,23 @@
           <ul class="hotel-list">
             <li class="hotel-item">
               <div class="hotel-info">
-                <a href="">
+                <a class="hotel-img-wrapper" href="">
                   <img src="img/amara.jpg" width="135" height="90" alt="Вид на уникальные красные скалы и двор с окна отеля">
                 </a>
-                <h3 class="hotel-title"><a href="">Amara Resort &#38; Spa</a></h3>
-<!-- Правильно ли обернуть в контейнеры эти две пары для стилизации? -->
-                <p>
-                  <span class="hotel-type">Гостиница</span>
-                  <span class="hotel-price">От 4000 Р.</span>
-                </p>
-                <p>
-                  <a class="button button-more-info" href="">Подробнее</a>
-                  <a  class="button button-book" href="">Забронировать</a>
-                </p>
+                <div class="hotel-info-wrapper">
+                  <h3 class="hotel-title"><a href="">Amara Resort &#38; Spa</a></h3>
+                  <p>
+                    <span class="hotel-type">Гостиница</span>
+                    <span class="hotel-price">От 4000 Р.</span>
+                  </p>
+                  <p>
+                    <a class="button button-more-info" href="">Подробнее</a>
+                    <a  class="button button-book" href="">Забронировать</a>
+                  </p>
+                </div>
               </div>
 
               <div class="hotel-rating">
-<!-- Звезды фоном только через div получилось -->
                 <div class="hotel-rating-star four-stars"></div>
                 <p>Рейтинг: 8,5</p>
               </div>
@@ -137,21 +139,23 @@
 
             <li  class="hotel-item">
               <div class="hotel-info">
-                <a href="">
+                <a class="hotel-img-wrapper" href="">
                   <img src="img/desert.jpg" width="135" height="90" alt="Вид на отель со стороны заезда и вывеска отеля">
                 </a>
-                <h3 class="hotel-title"><a href="">Desert Quail Inn</a></h3>
-                <p>
-                  <span class="hotel-type">Мотель</span>
-                  <span class="hotel-price">От 3000 Р.</span>
-                </p>
-                <p>
-                  <a class="button button-more-info" href="">Подробнее</a>
-                  <a class="button button-book" href="">Забронировать</a>
-                </p>
+                <div class="hotel-info-wrapper">
+                  <h3 class="hotel-title"><a href="">Desert Quail Inn</a></h3>
+                  <p>
+                    <span class="hotel-type">Мотель</span>
+                    <span class="hotel-price">От 3000 Р.</span>
+                  </p>
+                  <p>
+                    <a class="button button-more-info" href="">Подробнее</a>
+                    <a class="button button-book" href="">Забронировать</a>
+                  </p>
+                </div>
               </div>
+
               <div class="hotel-rating">
-                <!-- Звезды фоном -->
                 <div class="hotel-rating-star three-stars"></div>
                 <p>Рейтинг: 8,9</p>
               </div>
@@ -159,21 +163,23 @@
 
             <li class="hotel-item">
               <div class="hotel-info">
-                <a href="">
+                <a class="hotel-img-wrapper" href="">
                   <img src="img/villas.jpg" width="135" height="90" alt="На переднем плане обширный газон перед отелем, вдалике одноуровневый, ухоженный отель среди зеленых деревьев">
                 </a>
-                <h3 class="hotel-title"><a href="">Villas at Poco Diablo</a></h3>
-                <p>
-                  <span class="hotel-type">Апартаменты</span>
-                  <span class="hotel-price">От 2000 Р.</span>
-                </p>
-                <p>
-                  <a class="button button-more-info" href="">Подробнее</a>
-                  <a class="button button-book" href="">Забронировать</a>
-                </p>
+                <div class="hotel-info-wrapper">
+                  <h3 class="hotel-title"><a href="">Villas at Poco Diablo</a></h3>
+                  <p>
+                    <span class="hotel-type">Апартаменты</span>
+                    <span class="hotel-price">От 2000 Р.</span>
+                  </p>
+                  <p>
+                    <a class="button button-more-info" href="">Подробнее</a>
+                    <a class="button button-book" href="">Забронировать</a>
+                  </p>
+                </div>
               </div>
+
               <div class="hotel-rating">
-                <!-- Звезды фоном -->
                 <div class="hotel-rating-star two-stars"></div>
                 <p>Рейтинг: 9,2</p>
               </div>
@@ -183,23 +189,26 @@
       </main>
 
       <footer class="main-footer">
-        <div class="footer-contacts">
-          <p>
-            #VisitSedona
-          </p>
-          Тел: <a href="tel:74956660266">+7(495) 666-02-66</a>
+        <div class="main-footer-wrapper">
+<!-- Для стилизации мне не хватало одной обертки p, и урезав ширину, наш Тел.: ускакал бы на предыдущую строку, поэтому дополнительно оборачиваю первую строку в p -->
+          <div class="footer-contacts">
+            <p class="footer-contacts-hashtag">
+              #VisitSedona
+            </p>
+            Тел: <a href="tel:74956660266">+7(495) 666-02-66</a>
+          </div>
+
+          <ul class="footer-social-list">
+            <li><a class="social-button" href="" aria-label="Твитер"></a></li>
+            <li><a class="social-button" href=""  aria-label="Фейсбук"></a></li>
+            <li><a class="social-button" href="" aria-label="Ютуб"></a></li>
+          </ul>
+
+          <p class="footer-copyright">
+            <span class="footer-copyright-text">Website by</span>
+            <a class="footer-copyright-img" href="https://htmlacademy.ru/intensive/htmlcss"><img src="img/logo-htmlacademy.svg" width="115" height="41" alt="Логотип HTMLAcademy"></a>
           </p>
         </div>
-
-        <ul class="footer-social-list">
-          <li class="social-button"><a href="" aria-label="Твитер"></a></li>
-          <li class="social-button"><a href="" aria-label="Фейсбук"></a></li>
-          <li class="social-button"><a href="" aria-label="Ютуб"></a></li>
-        </ul>
-        <p class="footer-copyright">
-          Website by
-          <a class="footer-copyright-img" href="https://htmlacademy.ru/intensive/htmlcss"><img src="img/logo-htmlacademy.svg" width="115" height="41" alt="Логотип HTMLAcademy"></a>
-        </p>
       </footer>
     </div>
   </body>
