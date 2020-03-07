@@ -1,3 +1,16 @@
+
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
+}
+html {
+	box-sizing: border-box;
+}
+.block {
+	box-sizing: content-box;
+}
+
 body {
 	margin: 0;
 	padding: 0;
@@ -68,6 +81,13 @@ a {
 	color: #000000;
 }
 
+.main-header-logo {
+	position: absolute;
+/* Если у нас получается, что проценты нужно задавать с
+дробной частью, то так и задавать или округлять? */
+	left: 44.5%;
+}
+
 .site-navigation a:hover,
 .site-navigation a:focus {
 	color: #81b3d2;
@@ -90,8 +110,8 @@ a {
 .intro {
 	background-color: #f2f2f2;
 	background-image: url(../img/intro.jpg);
-	background-repeat: no-repeat;
-} 
+	background-size: cover;
+}
 
 .benefits-title {
 	margin: 0;
@@ -111,39 +131,40 @@ a {
 	counter-reset: list 0; 
 }
 
-.benefits-item:before {
-	counter-increment: list;
-	content: "\2013 " counter(list) "\2013";
-}
-
 .benefits-item-special {
 	color: #ffffff;
 
 	background-color: #81b3d2;
 }
 
-.benefits-item-title,
-.benefits-sublist-title {
+.benefits-item-title {
+	margin: 0 auto;
+
 	font-size: 21px;
 	line-height: 21px;
 }
 
-.benefits-item-text,
-.benefits-sublist-text { 
+.benefits-item-text { 
 	font-size: 14px;
 	line-height: 21px;
 	font-weight: 400; 
 }
 
-/* Кусочек сделала, но пока непонятно как выстраивать отступы не постоянные */
-.benefits-item-text {
-	content: "\&ndash \2116 1 \&ndash \A";
+.benefits-item-text::before {
+	position: absolute;
+	top: -42px;
+	left: 41%;
+	counter-increment: list;
+	content: "\2014\00A0\2116" counter(list) "\00A0\2014";
 
+	color: #ffffff;
+}
+
+.benefits-item-img {
+	background-size: cover;
 }
 
 .benefits-sublist {
-	position: relative;
-
 	margin: 0;
 	padding: 0;
 
@@ -152,10 +173,20 @@ a {
 	background-color: #ffffff;
 }
 
-.benefits-sublist li::before {
+.benefits-sublist-title {
+	position: relative;
+	width: 40%;
+	margin: 0 auto;
+	margin-bottom: 23px;
+
+	font-size: 21px;
+	line-height: 21px;
+}
+
+.benefits-sublist-title::before {
 	content: "";
 	position: absolute;
-	top: 0;
+	top: -105px;
 	left: 50%;
 	transform: translateX(-50%);
 
@@ -166,16 +197,24 @@ a {
 	background-color: #ffffff;
 }
 
-.benefits-sublist .benefits-sublist-home::before {
+.benefits-sublist-home .benefits-sublist-title::before {
 	background-image: url("../img/icon-1.svg");
 }
 
-.benefits-sublist .benefits-sublist-food::before {
+.benefits-sublist-food .benefits-sublist-title::before {
 	background-image: url("../img/icon-2.svg");
 }
 
-.benefits-sublist .benefits-sublist-souvenirs::before {
+.benefits-sublist-souvenirs .benefits-sublist-title::before {
 	background-image: url("../img/icon-3.svg");
+}
+
+.benefits-sublist-text {
+	margin: 0 auto;
+
+	font-size: 14px;
+	line-height: 21px;
+	font-weight: 400; 
 }
 
 .suggestion-title {
@@ -259,10 +298,11 @@ a {
 
 .footer-copyright {
 	font-size: 14px;
-	line-height: 26px; /* Не понимаю откуда берется на макете высота 50px */
+	line-height: 26px;
 	font-weight: 400;
 	color: #000000;
-/* перенесла vertical-align из <а>, чтобы надпись была посредине строки по вертикали */
+/* перенесла vertical-align из <а>, чтобы надпись была 
+посредине строки по вертикали */
 	vertical-align: middle;
 }
 
@@ -275,6 +315,7 @@ a {
 	background-image: url(../img/filter-background.jpg);
 	background-repeat: no-repeat;
 	background-size: cover;
+	background-position: center;
 }
 
 .filters-group,
@@ -448,36 +489,6 @@ a {
 	background-color: #503e33;
 }
 
-/*
-.hotel-rating-star {
-	width: 18px;
-	height: 18px;
-
-	background-image: url(../img/star.svg);
-	background-repeat: repeat;
-}
-
-.two-stars {
-	width: 42px;
-	height: 18px;
-	background-repeat: repeat-x;
-}
-
-.three-stars {
-	width: 54px;
-	height: 18px;
-}
-
-.four-stars {
-	width: 72px;
-	height: 18px;
-}
-
-.five-stars {
-	width: 90px;
-	height: 18px;
-} */
-
 .hotel-rating-star {
 	width: 114px;
 	height: 18px;
@@ -505,4 +516,389 @@ a {
 	color: #666666;
 
 	background-color: #f2f2f2;
+}
+
+/* Сетка */
+
+.page-wrapper {
+	width: 1200px;
+	margin: 0 auto;
+}
+
+.site-navigation {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	padding-top: 15px;
+	padding-bottom: 15px;
+}
+
+.site-navigation li {
+	flex-basis: 20%;
+}
+
+.intro {
+	min-height: 353px;
+	margin-top: 0;
+	margin-bottom: 53px;
+	padding-top: 76px;
+	padding-bottom: 79px;
+}
+
+.page-title {
+	width: 46.7%;
+	margin: 0 auto;
+	margin-bottom: 26px;
+}
+
+.benefits-title {
+	margin-bottom: 50px;
+}
+
+.benefits-list {
+	display: flex;
+	flex-direction: column;
+	min-width: 1098px;
+	margin-bottom: 57px;
+}
+
+.benefits-flex-line {
+	flex-basis: 23.3%;
+}
+
+.benefits-flex-second-line {
+	flex-basis: 30%;
+	flex-grow: 1;
+}
+
+.benefits-item-special-wrapper {
+	display: flex;
+	flex-wrap: wrap;
+	align-content: start;
+}
+
+.benefits-item-special { /*Вот эти два по высоте выезжают,
+	откуда они ее берут я не понимаю*/
+	flex-grow: 1;
+	width: 33.3%;
+
+	padding-top: 48px;
+}
+
+.benefits-item-title {
+	width: 40%;
+	margin: 0 auto;
+	margin-bottom: 65px;
+	}
+
+.benefits-item-img {
+	flex-grow: 2;
+	width: 66.6%;
+}
+
+.benefits-item-text { 
+	position: relative;
+	width: 70%;
+	margin: 0 auto;
+	margin-bottom: 54px;
+}
+
+.benefits-sublist {
+	display: flex;
+	justify-content: space-around;
+	flex-wrap: wrap;
+}
+
+.benefits-sublist-item {
+	flex-basis: 33.3%;
+	min-height: 169px;
+	padding-top: 161px;
+}
+
+.benefits-sublist-text {
+	width: 75%;
+	margin-bottom: 81px;
+
+	font-size: 14px;
+	line-height: 21px;
+	font-weight: 400; 
+}
+
+.benefits-item-special-bridge {
+	order: 2;
+}
+
+.benefits-item-special-bridge .benefits-item-text {
+	width: 80%;
+}
+
+.benefits-flex-fourth-line {
+	display: flex;
+	justify-content: space-around;
+	flex-wrap: wrap;
+}
+
+.benefits-flex-fourth-line .benefits-item {
+	flex-basis: 400px;
+	padding-top: 49px;
+
+	background-color: #eeeeee;
+}
+
+.benefits-flex-fourth-line .benefits-item-title {
+	width: 35%;
+}
+
+.benefits-flex-fourth-line .benefits-item-text::before {
+	color: #000000;
+}
+
+.benefits-flex-fourth-line .benefits-item-text {
+	width: 62%;
+}
+
+.benefits-flex-fourth-line .benefits-item-text-wide {
+	width: 66%;
+}
+
+.suggestion {
+/* Высота за вычетом футера */
+	margin-bottom: 473px;
+}
+
+.suggestion-info {
+	margin-top: 23px; /* Так как сверху b */
+	margin-bottom: 47px;
+}
+
+.suggestion-button {
+	width: 568px;
+	min-height: 86px;
+}
+
+.suggestion-map-wrapper {
+	position: relative;
+}
+
+.map {
+	display: none;
+	position: absolute;
+	bottom: -120px;
+	left: 0;
+}
+
+.main-footer {
+	padding-top: 32px;
+	padding-bottom: 32px;
+	padding-left: 122px;
+	padding-right: 101px;
+}
+
+.main-footer-wrapper {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+/* Сделала футер по подложке, но тогда высота в Zeplin
+и в макете не совпадает */
+
+.footer-contacts {
+	margin: 0;
+	margin-right: 179px;
+}
+
+.footer-contacts-hashtag {
+	margin: 0;
+	margin-bottom: 6px;
+}
+
+.footer-copyright {
+	margin: 0;
+	margin-left: auto;
+	vertical-align: middle; /* Сейчас ссылка (прозрачная область)
+	мешает центрировать копирайт, когда ее поправим, то все выровняется*/
+}
+
+.footer-copyright-text {
+	margin-right: 4px;
+}
+
+.filters {
+	display: flex;
+	justify-content: space-between;
+	min-height: 217px;
+	padding-top: 28px;
+	padding-left: 72px;
+	padding-right: 72px;
+
+	text-align: left;
+}
+
+fieldset {
+	margin: 0;
+	padding: 0;
+}
+
+.filters-group {
+	padding: 0;
+}
+
+.filters-first-group {
+	margin-right: 119px;
+}
+
+.filters-title {
+	margin-bottom: 16px;
+}
+
+.filters-cost{
+	padding: 0;
+	margin-bottom: 57px; /* Пока нет range */
+
+	text-align: left;
+}
+
+.filters-cost-group {
+	flex-basis: 318px;
+	display: flex;
+	flex-direction: column;
+	margin-left: auto;
+}
+
+.filters-submit-button {
+	width: 137px;
+	height: 36px;
+	margin-left: 85px;
+}
+
+.filters-list li {
+	margin-bottom: 20px;
+}
+
+.filters-list li:last-child {
+	margin-bottom: 0;
+}
+
+.sorter {
+	display: flex;
+	min-height: 86px;
+	padding-top: 30px;
+	padding-left: 72px;
+	padding-right: 72px;
+	padding-bottom: 28px;
+}
+
+.sorter-title {
+	margin-right: 46px;
+}
+
+.sorter-subtitle {
+	margin-right: 40px;
+	padding-top: 6px;
+}
+
+.sorter-items-wrapper {
+	display: flex;
+	flex-direction: row;
+}
+
+.sorter-items {
+	display: flex;
+	min-width: 238px;
+}
+
+.sorter-item {
+	margin-right: 33px;
+	padding-top: 3px;
+}
+
+.sorter-item:last-child {
+	margin-right: 0;
+}
+
+.hotel-section {
+	padding: 0 72px;
+}
+
+.hotel-title {
+	margin: 0;
+	padding: 0;
+
+	font-size: 21px;
+}
+
+
+.hotel-section p {
+	margin: 0;
+	padding: 0;
+}
+
+.hotel-list {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+}
+
+.hotel-item {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	padding-top: 28px;
+	padding-bottom: 31px;
+}
+
+.hotel-info {
+	display: flex;
+	justify-content: flex-start;
+	align-items: flex-start;
+}
+
+.hotel-img-wrapper {
+	height: 92px;
+	margin-right: 30px;
+}
+
+.hotel-info-wrapper {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	min-height: 90px;
+
+	text-align: left;
+}
+.hotel-type {
+	margin-bottom: 20px;
+}
+
+.button-more-info {
+	margin-right: 6px;
+	padding-top: 4px;
+	padding-bottom: 6px;
+	padding-left: 17px;
+	padding-right: 17px;
+}
+
+.button-book {
+	padding-top: 4px;
+	padding-bottom: 6px;
+	padding-left: 17px;
+	padding-right: 17px;
+}
+
+.hotel-rating {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.hotel-rating-star {
+	align-self: flex-end;
+}
+
+.hotel-rating p {
+	padding-top: 5px;
+	padding-bottom: 6px;
+	padding-left: 16px;
+	padding-right: 13px;
 }
