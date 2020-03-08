@@ -15,7 +15,6 @@
           <ul class="site-navigation">
             <li><a href="">Информация</a></li>
             <li><a href="">Фото и видео</a></li>
-            <li class="main-header-logo-li"></li>
             <li><a href="">Карта штата</a></li>
             <li><a href="catalog.html">Гостиницы</a></li>
           </ul>
@@ -29,24 +28,20 @@
 
         <section class="benefits">
           <h1 class="page-title">Седона — небольшой городок в Аризоне, заслуживающий большего!</h1>
-
           <p class="benefits-title">Рассмотрим 5 причин, по которым Седона круче, чем Гранд Каньон!</p>
 
-<!-- Красная область началась -->
-
           <ol class="benefits-list">
-            <li class="benefits-item benefits-flex-line benefits-flex-first-line">
-              <div class="benefits-item-special-wrapper">
-                <div class="benefits-item-special">
-                  <h2 class="benefits-item-title">Настоящий городок</h2>
-                  <p class="benefits-item-text">Седона — не аттракцион для туристов, там течёт своя жизнь</p>
-                </div>
-                <div class="benefits-item-img">
-                  <img src="img/house.jpg" width="800" height="256" alt="Выделен задний план, на котором красные скалы Седоны. Передний план слегка замылен, но видно деревянный дом с верандой, типичный для этой местности. Развевается американский флаг. Рядом пышные зеленые цветущие кусты.">
-                </div>
+            <li class="benefits-item benefits-item-big">
+              <div class="benefits-item-special">
+                <h2 class="benefits-item-title">Настоящий городок</h2>
+                <p class="benefits-item-text">Седона — не аттракцион для туристов, там течёт своя жизнь</p>
+              </div>
+              <div class="benefits-item-img">
+                <img src="img/house.jpg" width="800" height="256" alt="Отель Седоны на фоне гор и местной растительности">
               </div>
               
-              <ul class="benefits-sublist benefits-flex-line benefits-flex-second-line">
+              
+              <ul class="benefits-sublist">
                 <li class="benefits-sublist-item benefits-sublist-home">
                   <h3 class="benefits-sublist-title">Жильё</h3>
                   <!-- Иконка - декоративное изображение -->
@@ -67,43 +62,36 @@
               </ul>
             </li>
             
-            <li class="benefits-item benefits-flex-line benefits-flex-third-line">
-              <div class="benefits-item-special-wrapper">
-                <div class="benefits-item-special benefits-item-special-bridge">
-                  <h2 class="benefits-item-title">Там есть<br>Мост дьявола</h2>
-                  <p class="benefits-item-text">Да, по нему можно пройти! Если конечно вы осмелитесь</p>
-                </div>
-                
-                <div class="benefits-item-img">
-                  <img src="img/bridge.jpg" width="800" height="256" alt="Достопремичательность. Каменный арочный мост между скалами">
-                </div>
+            <li class="benefits-item benefits-item-big">
+              <div class="benefits-item-special benefits-item-special-bridge">
+                <h2 class="benefits-item-title">Там есть<br>Мост дьявола</h2>
+                <p class="benefits-item-text">Да, по нему можно пройти! Если конечно вы осмелитесь</p>
+              </div>
+              
+              <div class="benefits-item-img">
+                <img src="img/bridge.jpg" width="800" height="256" alt="Достопремичательность. Каменный арочный мост между скалами">
               </div>
             </li>
             
-            <div class="benefits-flex-line benefits-flex-fourth-line">
-              <li class="benefits-item">
-                <h2 class="benefits-item-title">Небольшая площадь</h2>
-                <p class="benefits-item-text">Все достопримечательности находятся очень близко</p>
-              </li>
-              
-              <li class="benefits-item">
-                <h2 class="benefits-item-title">Красивая дорога</h2>
-                <p class="benefits-item-text benefits-item-text-wide">Ехать в Седону из Лас-Вегаса совсем не скучно!</p>
-              </li>
-              
-              <li class="benefits-item">
-                <h2 class="benefits-item-title">Мало туристов</h2>
-                <p class="benefits-item-text">Большинство едет в гранд каньон и толпится там</p>
-              </li>
-            </div>
+            <li class="benefits-item benefits-item-small">
+              <h2 class="benefits-item-title">Небольшая площадь</h2>
+              <p class="benefits-item-text">Все достопримечательности находятся очень близко</p>
+            </li>
+            
+            <li class="benefits-item benefits-item-small">
+              <h2 class="benefits-item-title">Красивая дорога</h2>
+              <p class="benefits-item-text benefits-item-text-wide">Ехать в Седону из Лас-Вегаса совсем не скучно!</p>
+            </li>
+            
+            <li class="benefits-item benefits-item-small">
+              <h2 class="benefits-item-title">Мало туристов</h2>
+              <p class="benefits-item-text">Большинство едет в гранд каньон и толпится там</p>
+            </li>
           </ol>
         </section>
 
-<!-- Закончилась красная область -->
-
         <div class="suggestion">
           <b class="suggestion-title">Заинтересовались?</b>
-          <!-- Вставила дополнительный br, просто шириной нам не получится так перенести слова в этом месте -->
           <p class="suggestion-info">Укажите предполагаемые даты поездки,<br>и мы покажем вам лучшие предложения гостиниц в Cедоне</p>
           <button class="button suggestion-button" type="button">Поиск гостиницы в Седоне</button>
           
@@ -113,21 +101,20 @@
               <div class="modal-form-item">
                 <label for="start-date-field">Дата заезда:</label>
                 <input type="text" name="start-date" id="start-date-field" value="24 апреля 2017">
-                <button class="modal-input-button" type="button" aria-label="Календарь"></button> <!-- Для JS -->
-                <!--  class="modal-input-button" - на мой взгляд, подходит и для календаря и для +/-, после по центру выровнять иконки -->
+                <button class="modal-input-button" type="button" aria-label="Календарь"></button> 
               </div>
 
               <div class="modal-form-item">
                 <label for="end-date-field">Дата выезда:</label>
                 <input type="text" name="end-date" id="end-date-field" value="4 июля 2017">
-                <button class="modal-input-button" type="button" aria-label="Календарь"></button> <!-- Для JS -->
+                <button class="modal-input-button" type="button" aria-label="Календарь"></button>
               </div>
 
               <div class="modal-form-item">
                 <label for="adult-field">Взрослые:</label>
-                <button class="modal-input-button" type="button" aria-label="Уменьшить">-</button> <!-- Для JS -->
+                <button class="modal-input-button" type="button" aria-label="Уменьшить">-</button>
                 <input type="number" name="adult" id="adult-field" value="2" min="0">
-                <button class="modal-input-button" type="button" aria-label="Увеличить">+</button> <!-- Для JS -->
+                <button class="modal-input-button" type="button" aria-label="Увеличить">+</button>
               </div>
 
               <div class="modal-form-item">
@@ -143,25 +130,22 @@
           </section>
         </div>
 
-        <div class="suggestion-map-wrapper">
-          <img class="map" src="img/map.png" width="1200" height="593" alt="США, Аризона, Седона">
+        <div class="map">
+          <img src="img/map.png" width="1200" height="593" alt="США, Аризона, Седона">
         </div>
       </main>
 
       <footer class="main-footer">
         <div class="main-footer-wrapper">
-<!-- Для стилизации мне не хватало одной обертки p, и урезав ширину, наш Тел.: ускакал бы на предыдущую строку, поэтому дополнительно оборачиваю первую строку в p -->
-          <div class="footer-contacts">
-            <p class="footer-contacts-hashtag">
-              #VisitSedona
-            </p>
+          <p class="footer-contacts">
+            <b class="hashtag">#VisitSedona</b><br>
             Тел: <a href="tel:74956660266">+7(495) 666-02-66</a>
-          </div>
+          </p>
 
           <ul class="footer-social-list">
-            <li><a class="social-button" href="" aria-label="Твитер"></a></li>
-            <li><a class="social-button" href=""  aria-label="Фейсбук"></a></li>
-            <li><a class="social-button" href="" aria-label="Ютуб"></a></li>
+            <li><a class="social-button" href="" aria-label="Седона в Твиттере"></a></li>
+            <li><a class="social-button" href=""  aria-label="Седона в Фейсбук"></a></li>
+            <li><a class="social-button" href="" aria-label="Седона на Ютуб"></a></li>
           </ul>
 
           <p class="footer-copyright">
