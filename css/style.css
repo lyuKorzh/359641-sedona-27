@@ -87,7 +87,7 @@ a {
 }
 
 .site-navigation li:nth-child(2) {
-	margin-right: 239px;
+	margin-right: 20%;
 }
 
 .site-navigation a {
@@ -128,7 +128,7 @@ a {
 	background-size: cover;
 }
 
-.benefits-title {
+.benefits-lead {
 	margin: 0;
 
 	font-size: 14px;
@@ -193,6 +193,7 @@ a {
 	width: 40%;
 	margin: 0 auto;
 	margin-bottom: 23px;
+	padding-top: 161px;
 
 	font-size: 21px;
 	line-height: 21px;
@@ -201,7 +202,7 @@ a {
 .benefits-sublist-title::before {
 	content: "";
 	position: absolute;
-	top: -105px;
+	top: 62px;
 	left: 50%;
 	transform: translateX(-50%);
 
@@ -312,13 +313,12 @@ a {
 }
 
 .footer-copyright {
+	display: flex;
+	align-items: center;
 	font-size: 14px;
 	line-height: 26px;
 	font-weight: 400;
 	color: #000000;
-/* перенесла vertical-align из <а>, чтобы надпись была 
-посредине строки по вертикали */
-	vertical-align: middle;
 }
 
 .footer-copyright a {
@@ -533,21 +533,26 @@ a {
 	background-color: #f2f2f2;
 }
 
+
+
 /* Сетка */
+
+
 
 .site-navigation {
 	display: flex;
 	flex-wrap: wrap;
-	padding-top: 15px;
-	padding-bottom: 15px;
 }
 
 .site-navigation li {
 	flex-basis: 20%;
+	padding-top: 15px;
+	padding-bottom: 15px;
 }
 
 .intro {
 	margin-top: 0;
+	margin-bottom: 0;
 	padding-top: 76px;
 	padding-bottom: 79px;
 }
@@ -559,11 +564,11 @@ a {
 }
 
 .benefits {
-	padding-top: 53px;
+	padding-top: 67px;
 }
 
-.benefits-title {
-	width: 40.75%
+.benefits-lead {
+	width: 40.75%;
 	margin: 0 auto;
 	margin-bottom: 50px;
 }
@@ -598,10 +603,12 @@ a {
 
 .benefits-item-img {
 	width: 66.6667%;
+	height: 256px;
 }
 
 .benefits-item-img img {
 	display: block;
+	height: auto;
 }
 
 .benefits-item-text { 
@@ -618,8 +625,7 @@ a {
 }
 
 .benefits-sublist-item {
-	flex-basis: 33.3%;
-	padding-top: 161px;
+	flex-basis: 33.3334%;
 }
 
 .benefits-sublist-text {
@@ -704,6 +710,7 @@ a {
 }
 
 .hashtag {
+	display: block;
 	margin: 0;
 	margin-bottom: 6px;
 }
@@ -732,7 +739,7 @@ a {
 	width: 154px;
 	margin: 0;
 	padding: 0;
-	padding-right: 115px;
+	padding-right: 20px;
 }
 
 .filters-title {
@@ -859,7 +866,11 @@ a {
 .hotel-type,
 .hotel-price {
 	width: 50%;
-	margin-bottom: 10px; /* Чтобы дотолкать до границы кнопки */
+	margin-bottom: 10px;
+}
+
+.hotel-type {
+	padding-right: 10px;
 }
 
 /*Не поняла как отступ появился между кнопками*/
